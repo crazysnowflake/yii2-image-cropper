@@ -3,22 +3,31 @@ $(document).ready(function () {
     function imageCropper() {
         function readFile(input) {
             var $container = $(input).closest('.image-cropper-container');
-            var $preview = $('.image-cropper-preview', $container);
-            var imageCropper = $container.data('imageCropper');
+            var pluginOptions = $container.data('imageCropperOptions'),
+                $preview = $('.image-cropper-preview', $container),
+                imageCropper = $container.data('imageCropper'),
+                defaultOptions = {
+                    enableExif: true,
+                    viewport: {
+                        width: 200,
+                        height: 200
+                    }
+                };
+            if( typeof pluginOptions === 'undefined'){
+                pluginOptions = {};
+            }
+
+            pluginOptions = $.extend( defaultOptions, pluginOptions );
+
+            if( typeof pluginOptions.boundary === 'undefined'){
+                pluginOptions.boundary = {
+                    height : pluginOptions.viewport.height
+                };
+            }
 
             if (input.files && input.files[0]) {
                 if (typeof imageCropper === 'undefined') {
-                    imageCropper = $preview.croppie({
-                        enableExif: true,
-                        viewport: {
-                            width: 200,
-                            height: 200,
-                            type: 'circle'
-                        },
-                        boundary: {
-                            height: 200
-                        }
-                    });
+                    imageCropper = $preview.croppie(pluginOptions);
                     $container.data('imageCropper', imageCropper);
                 }
 
@@ -29,7 +38,6 @@ $(document).ready(function () {
                     imageCropper.croppie('bind', {
                         url: e.target.result
                     }).then(function () {
-                        console.log('jQuery bind complete');
                     });
 
                 };

@@ -1,6 +1,7 @@
 <?php
 
 /**
+ * @var string $id
  * @var string $input
  * @var string $attribute
  * @var string $templateImage
@@ -10,7 +11,7 @@
 use yii\helpers\Html; ?>
 
 
-<div class="image-cropper-container <?= $templateImage ? 'has-image' : ''; ?>">
+<div id="<?= $id; ?>" class="image-cropper-container <?= $templateImage ? 'has-image' : ''; ?>">
     <div class="image-cropper-preview">
 
     </div>
