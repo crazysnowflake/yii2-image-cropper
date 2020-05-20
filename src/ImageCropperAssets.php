@@ -5,6 +5,7 @@
     class ImageCropperAssets  extends \yii\web\AssetBundle
     {
 
+    	public $sourcePath = "@vendor/crazysnowflake/yii2-image-cropper/src";
 	    public $js = [
 		    'assets/js/croppie.min.js',
 		    'assets/js/image-cropper.js',
