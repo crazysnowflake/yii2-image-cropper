@@ -1,0 +1,28 @@
+{
+    "name": "crazysnowflake/yii2-image-cropper",
+    "description": "A Javascript Image Cropper",
+    "keywords": ["image", "cropper", "croppie", "crop-image", "jquery", "profile image", "avatar", "bootstrap"],
+    "homepage": "https://github.com/crazysnowflake/yii2-image-cropper",
+    "type": "yii2-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Elena Zhyvohliad",
+            "email": "ezh@ucat.biz",
+            "homepage": "http://ucat.biz/"
+        }
+    ],
+    "require": {
+        "kartik-v/yii2-krajee-base": ">=1.9.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "crazysnowflake\\yii2-image-cropper\\": "src"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}

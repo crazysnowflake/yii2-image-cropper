@@ -1,0 +1,59 @@
+.image-cropper-container {
+    max-width: 200px;
+    position: relative;
+}
+
+.image-cropper-container .image-cropper-remove-image {
+    background: white;
+    color: red;
+    border-radius: 50%;
+    display: none;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    z-index: 90;
+    text-align: center;
+}
+
+.image-cropper-container .image-cropper-remove-image i {
+    font-size: 0.9rem;
+    line-height: 16px;
+}
+
+.image-cropper-container .image-cropper-upload-msg {
+    height: 200px;
+    border: 1px solid #dee2e6 !important;
+    color: #aaa;
+    margin: auto;
+    display: flex;
+    font-size: 16px;
+    word-break: break-word;
+}
+
+.image-cropper-container .image-cropper-upload-msg span {
+    text-align: center;
+    align-self: center;
+    padding: 10px;
+}
+.image-cropper-container .image-cropper-upload-msg img {
+    display: none;
+    width: 100%;
+}
+.image-cropper-container.cropper-inited .image-cropper-upload-msg ,
+.image-cropper-container .image-cropper-change-image {
+    display: none;
+}
+
+.image-cropper-container.cropper-inited .image-cropper-select-image, .image-cropper-container.has-image .image-cropper-select-image,
+.image-cropper-container.cropper-inited .image-cropper-upload-msg span, .image-cropper-container.has-image .image-cropper-upload-msg span {
+    display: none;
+}
+
+.image-cropper-container.cropper-inited .image-cropper-change-image, .image-cropper-container.has-image .image-cropper-change-image,
+.image-cropper-container.cropper-inited .image-cropper-upload-msg img, .image-cropper-container.has-image .image-cropper-upload-msg img ,
+.image-cropper-container.cropper-inited .image-cropper-remove-image, .image-cropper-container.has-image .image-cropper-remove-image {
+    display: block;
+}
