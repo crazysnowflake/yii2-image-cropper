@@ -12,8 +12,9 @@
     	public $pluginOptions = [];
     	public $templateImage = null;
     	public $templateRemove = '<i class="fas fa-times-circle"></i>';
+	    public $cropSize = [200, 200];
 
-        public function init() {
+	    public function init() {
             parent::init();
         }
 
@@ -30,6 +31,7 @@
 		        'pluginOptions' => $this->pluginOptions,
 		        'templateImage' => $this->templateImage,
 		        'templateRemove' => $this->templateRemove,
+		        'cropSize'       => $this->cropSize,
 	        ]);
         }
         protected function prepareOptions(){
